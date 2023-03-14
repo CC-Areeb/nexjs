@@ -36,3 +36,23 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+### Why use next js
+
+- It is a framework of react js that can create pre-rendered React websites. 
+
+- It offers us both the server side rendering (SSR) and static site generation (SSG). 
+
+- By the time the next app is rendered onto the browser, the react components are already rendered within the html.
+
+- The app can work as an Single Page Application (SPA) resulting in better Search Engine Optimization (SEO) and improves performance.
+
+### Next directory structure
+
+- Next comes along with its pre-defined directory structure.
+
+- The JSX screens we make are kept inside the pages directory.
+
+- Next js automatically creates the routing when you create a file.
+
+- Even if the file in the sub-folder then the routing will start from that sub-folder and then the file name.
