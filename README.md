@@ -56,3 +56,17 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - Next js automatically creates the routing when you create a file.
 
 - Even if the file in the sub-folder then the routing will start from that sub-folder and then the file name.
+
+
+### Custom components
+
+- Often in our next js app, we want to reuse certain components like for example a navbar or a footer so we can do that by simply creating a new folder but this new folder has to be outside the pages folder that next js has.
+
+- For good practise it is prefered that this custom components folder is made in the root of the project.
+
+
+### Navigation
+
+- When working with nextjs, we do not use the anchor tags `<a> </a>` but instead we use the `<Link href={}> </Link>` tags to jump between the pages so that all the navigation is done by JavaScript and that the page does not have to load over and over again when different requests are sent.
+
+- We can send in either a template literal, a simple string or a whole component inside the Link tags `<Link href=''> </Link>` | `<Link href={${}}> </Link>` | `<Link href={<component />}> </Link>`
