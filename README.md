@@ -70,3 +70,89 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - When working with nextjs, we do not use the anchor tags `<a> </a>` but instead we use the `<Link href={}> </Link>` tags to jump between the pages so that all the navigation is done by JavaScript and that the page does not have to load over and over again when different requests are sent.
 
 - We can send in either a template literal, a simple string or a whole component inside the Link tags `<Link href=''> </Link>` | `<Link href={${}}> </Link>` | `<Link href={<component />}> </Link>`
+
+- In TS (TypeScript), it is important to define the type of anything like if you define a variable, it should also have a type when you first define it 
+
+    ```
+    let words: string = '';
+    const numbers: number = 9;
+    ```
+
+- Similarly, there are types if you are nesting any component inside another component.
+
+    ```
+    export default function App({ Component, pageProps }: AppProps) {
+        return (
+        <Layout>
+            <Component {...pageProps} />
+        </Layout>
+        );
+    }
+    ```
+
+    ```
+    export default function Layout({ children: Element }) {
+        return (
+            <div>Layout</div>
+        )
+    }
+    ```
+
+- In the above example, The Layout component is the parent component and the `<Component {...pageProps} />` is the child so inside the Layout's file we had to define that we are destructuring the child element as well as defining that it's a child / children.
+
+
+- If you are getting an error about the child/children element then you can try to make an interface for this 
+
+    ```
+    import { ReactNode } from 'react';
+    import Footer from './Footer'
+    import Navbar from './Navbar'
+
+    interface LayoutProps {
+        children: ReactNode;
+    }
+
+    export default function Layout({ children }: LayoutProps) {
+        return (
+            <div className='content'>
+                <Navbar />
+                {children}
+                <Footer />
+            </div>
+        );
+    }
+    ```
+
+- Here, we are using the ReactNode type to indicate that children can be any valid JSX expression, and we are also defining a separate interface for the props with the children prop explicitly typed as ReactNode. (From chat gpt)
+
+- You can also make this method short by defing the interface within the export statement
+
+    ```
+    export default function Layout({ children }:  {children: ReactNode})
+    ```
+
+### Styling
+
+- There are fews ways to style a component in next js. First is by styling in a global css file that next already has given us, secondly we can do some styling in a JSX way (inline stylig) and lastly we can do in modules like `Home.module.css`.
+
+- The Module way of styling is quite unique as we can use the same class names in different modules and this will ensure that only a certain page has those styles applied on it as only that module is imported for that perticualar page.
+
+    index.tsx
+    ```
+    <div className="main-page">
+        // content
+    </div>
+    ```
+
+    Home.module.css
+    ```
+    .mainHeading {
+        text-align: center;
+    }
+    ```
+
+- It is important to make sure that you import the module's file and make sure the styles you are defining are of the class rather than the selector as these modules styles will only work for classes.
+
+    ```
+    import styles from '../styles/Home.module.css'
+    ```

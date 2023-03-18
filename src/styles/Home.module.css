@@ -1,0 +1,21 @@
+.button {
+    background-color: forestgreen;
+    color: whitesmoke;
+    border-radius: 1rem;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: darkcyan;
+    color: whitesmoke;
+    transition: 0.3s;
+}
+
+.btnDisplay {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.mainHeading {
+    text-align: center;
+}

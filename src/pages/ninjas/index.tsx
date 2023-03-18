@@ -1,15 +1,11 @@
 import React from 'react'
-import Footer from '../../../components/Footer'
-import Navbar from '../../../components/Navbar'
 
 export default function index() {
     return (
         <>
-            <div className="heading">
-                <Navbar />
+            <div className="all-ninjas-page">
                 <h1>All Ninjas! 🏃‍♂️</h1>
             </div>
-            <Footer />
         </>
     )
 }

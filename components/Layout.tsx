@@ -1,7 +1,18 @@
-import React from 'react'
 
-export default function Layout() {
+import { ReactNode } from 'react';
+import Footer from './Footer'
+import Navbar from './Navbar'
+
+interface LayoutProps {
+    children: ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps) {
     return (
-        <div>Layout</div>
-    )
+        <div className='content'>
+            <Navbar />
+            {children}
+            <Footer />
+        </div>
+    );
 }
