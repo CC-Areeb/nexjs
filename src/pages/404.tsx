@@ -1,6 +1,12 @@
 import Link from "next/link";
+import { useEffect } from "react";
 
 const NotFound = () => {
+
+    useEffect(() => {
+
+    }, []) 
+
     return (
         <>
             <div className="not-found text-center mt-4">
